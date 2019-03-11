@@ -5,9 +5,10 @@ import { Component } from '@angular/core';
   templateUrl: './app-hotels.component.html',
   styleUrls: ['./app-hotels.component.css']
 })
+
 export class AppHotelsComponent {
 
-  public hotels = [
+  public hotels: IHotel[] = [
     {
       id: 0,
       title: 'Universal Cabana',
@@ -79,5 +80,5 @@ export class AppHotelsComponent {
     }
   ];
 
-  public selectedHotel = this.hotels[0];
+  public selectedHotel: IHotel = this.hotels[0];
 }

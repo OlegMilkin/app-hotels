@@ -6,5 +6,5 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./weather.component.css']
 })
 export class WeatherComponent {
-  @Input("hotelItem") currentHotel;
+  @Input("hotelItem") currentHotel: IWeather;
 }

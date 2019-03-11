@@ -6,9 +6,10 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./list.component.css']
 })
 export class ListComponent {
-  @Input('hotelItem') hotel;
+  @Input('hotelItem') hotel: IHotel;
+  @Input() activeClass: boolean;
 
-  @Output() hotelSelected: EventEmitter<any> = new EventEmitter();
+  @Output() hotelSelected: EventEmitter<any> = new EventEmitter;
 
   selectHotel() {
     this.hotelSelected.emit();

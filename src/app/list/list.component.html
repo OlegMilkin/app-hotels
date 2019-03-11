@@ -1,4 +1,4 @@
-<div class="activity-row" (click)="selectHotel()">
+<div class="activity-row" (click)="selectHotel()" [class.active-hotel]="activeClass">
   <div class="activity-desc">
     <h5>{{ hotel.title }}</h5>
      <p>{{ hotel.address }}</p>

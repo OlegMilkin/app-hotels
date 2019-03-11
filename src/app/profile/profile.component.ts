@@ -6,5 +6,5 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent {
-  @Input("hotelItem") currentHotel;
+  @Input("hotelItem") currentHotel: IProfile;
 }

@@ -1,7 +1,9 @@
 <h1>Hot Weather Widget</h1>
 <div class="element">
 		<div class="element-left">
-			<div class="element-bg-img"><img src="../assets/images/1.jpg" alt="" class="img-responsive"> </div>
+			<div class="element-bg-img">
+				<img src="{{ selectedHotel.picture }}" alt="" class="img-responsive">
+			</div>
 			<div class="element-left-bottom">
 				<div class="ele-strip">
 					<ul>
@@ -16,7 +18,7 @@
 					  <span class="line"> </span>
 					  <div class="activity_box">
 						<div class="scrollbar" id="style-2">
-						  <app-list *ngFor="let hotel of hotels; let i = index" [class.active-hotel]="selectedHotel.id == i" [hotelItem]="hotel" (hotelSelected)="selectedHotel = hotel"></app-list>
+						  <app-list *ngFor="let hotel of hotels; let i = index" [hotelItem]="hotel" (hotelSelected)="selectedHotel = hotel" [activeClass]="selectedHotel.id == i"></app-list>
 						</div>
 					  </div>
 			   </div>
