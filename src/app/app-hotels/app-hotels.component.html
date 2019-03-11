@@ -1,0 +1,35 @@
+<h1>Hot Weather Widget</h1>
+<div class="element">
+		<div class="element-left">
+			<div class="element-bg-img"><img src="../assets/images/1.jpg" alt="" class="img-responsive"> </div>
+			<div class="element-left-bottom">
+				<div class="ele-strip">
+					<ul>
+						<li><a href="index.html#">Hotel</a></li>
+						<li><a href="index.html#">Fishing</a></li>
+						<li><a href="index.html#">Tours</a></li>
+						<li class="anc-bor"><a href="index.html#">Weather</a></li>
+					</ul>
+				</div>
+				<div class="village">
+					  <h3>Righteous indignation & like</h3>
+					  <span class="line"> </span>
+					  <div class="activity_box">
+						<div class="scrollbar" id="style-2">
+						  <app-list *ngFor="let hotel of hotels; let i = index" [class.active-hotel]="selectedHotel.id == i" [hotelItem]="hotel" (hotelSelected)="selectedHotel = hotel"></app-list>
+						</div>
+					  </div>
+			   </div>
+		</div>
+	   </div>
+		<div class="element-right">
+			<app-weather [hotelItem]="selectedHotel"></app-weather>
+			<app-profile [hotelItem]="selectedHotel"></app-profile>
+		</div>
+	  <div class="clear"> </div>
+</div>
+<!---728x90--->
+<div style='margin: 0 auto;text-align: center;margin-top: 5px;'></div>
+<div class="copy-right">
+    <p>© 2015 Hot Weather Widget. All rights reserved | Design by  <a href="http://w3layouts.com/" target="_blank">  W3layouts </a></p>
+</div>
