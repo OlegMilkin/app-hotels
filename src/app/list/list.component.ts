@@ -11,7 +11,7 @@ export class ListComponent {
 
   @Output() hotelSelected: EventEmitter<any> = new EventEmitter;
 
-  selectHotel() {
+  public selectHotel() {
     this.hotelSelected.emit();
   }
 }

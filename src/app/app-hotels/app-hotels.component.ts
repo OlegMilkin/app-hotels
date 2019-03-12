@@ -81,4 +81,8 @@ export class AppHotelsComponent {
   ];
 
   public selectedHotel: IHotel = this.hotels[0];
+
+  public selectHotel(hotel) {
+    this.selectedHotel = hotel;
+  }
 }

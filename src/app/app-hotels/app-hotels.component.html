@@ -18,20 +18,18 @@
 					  <span class="line"> </span>
 					  <div class="activity_box">
 						<div class="scrollbar" id="style-2">
-						  <app-list *ngFor="let hotel of hotels; let i = index" [hotelItem]="hotel" (hotelSelected)="selectedHotel = hotel" [activeClass]="selectedHotel.id == i"></app-list>
+						  <app-list *ngFor="let hotel of hotels; let i = index" [hotelItem]="hotel" (hotelSelected)="selectHotel(hotel)" [activeClass]="selectedHotel.id === i"></app-list>
 						</div>
 					  </div>
 			   </div>
 		</div>
 	   </div>
 		<div class="element-right">
-			<app-weather [hotelItem]="selectedHotel"></app-weather>
-			<app-profile [hotelItem]="selectedHotel"></app-profile>
+			<app-weather [hotelItem]="selectedHotel.weather"></app-weather>
+			<app-profile [hotelItem]="selectedHotel.profile"></app-profile>
 		</div>
 	  <div class="clear"> </div>
 </div>
-<!---728x90--->
-<div style='margin: 0 auto;text-align: center;margin-top: 5px;'></div>
 <div class="copy-right">
     <p>© 2015 Hot Weather Widget. All rights reserved | Design by  <a href="http://w3layouts.com/" target="_blank">  W3layouts </a></p>
 </div>
