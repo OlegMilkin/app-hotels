@@ -53,7 +53,7 @@ export class AppHotelsComponent {
         following: 111,
         photo: 'assets/images/b2.jpg'
       },
-      stars: 4
+      stars: 3
     },
     {
       id: 2,
@@ -85,4 +85,6 @@ export class AppHotelsComponent {
   public selectHotel(hotel) {
     this.selectedHotel = hotel;
   }
+
+  public hotelStar: number = 3;
 }

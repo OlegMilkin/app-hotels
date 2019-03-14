@@ -18,7 +18,7 @@
 					  <span class="line"> </span>
 					  <div class="activity_box">
 						<div class="scrollbar" id="style-2">
-						  <app-list *ngFor="let hotel of hotels; let i = index" [hotelItem]="hotel" (hotelSelected)="selectHotel(hotel)" [activeClass]="selectedHotel.id === i"></app-list>
+						  <app-list *ngFor="let hotel of hotels | filterHotel:hotelStar; let i = index" [hotelItem]="hotel" (hotelSelected)="selectHotel(hotel)" [activeClass]="selectedHotel.id === i"></app-list>
 						</div>
 					  </div>
 			   </div>
