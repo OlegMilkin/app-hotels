@@ -7,26 +7,27 @@
 			<div class="element-left-bottom">
 				<div class="ele-strip">
 					<ul>
-						<li><a href="index.html#">Hotel</a></li>
-						<li><a href="index.html#">Fishing</a></li>
-						<li><a href="index.html#">Tours</a></li>
-						<li class="anc-bor"><a href="index.html#">Weather</a></li>
+						<li><a href="#" [attr.data-stars]="" (click)="starsFilter($event)">Reset</a></li>
+						<li><a href="#"   [attr.data-stars]="3" (click)="starsFilter($event)">3 STARS</a></li>
+						<li><a href="#"  [attr.data-stars]="4" (click)="starsFilter($event)">4 STARS</a></li>
+						<li><a href="#" [attr.data-stars]="5" (click)="starsFilter($event)">5 STARS</a></li>
 					</ul>
 				</div>
 				<div class="village">
-					  <h3>Righteous indignation & like</h3>
-					  <span class="line"> </span>
-					  <div class="activity_box">
-						<div class="scrollbar" id="style-2">
-						  <app-list *ngFor="let hotel of hotels | filterHotel:hotelStar; let i = index" [hotelItem]="hotel" (hotelSelected)="selectHotel(hotel)" [activeClass]="selectedHotel.id === i"></app-list>
-						</div>
-					  </div>
+				  <h3>Righteous indignation & like</h3>
+				  <span class="line"> </span>
+				  <div class="activity_box">
+					<div class="scrollbar" id="style-2">
+					  <app-list *ngFor="let hotel of hotels | filterHotel:hotelStar; let i = index" [hotelItem]="hotel" (hotelSelected)="selectHotel(hotel)" (favoriteSelected)="addToFavorite(hotel)" [activeClass]="selectedHotel.id === i"></app-list>
+					</div>
+				  </div>
 			   </div>
 		</div>
 	   </div>
 		<div class="element-right">
 			<app-weather [hotelItem]="selectedHotel.weather"></app-weather>
 			<app-profile [hotelItem]="selectedHotel.profile"></app-profile>
+			<app-favorites [hotelItem]="favoriteHotelsList"></app-favorites>
 		</div>
 	  <div class="clear"> </div>
 </div>

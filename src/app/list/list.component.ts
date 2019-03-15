@@ -10,8 +10,13 @@ export class ListComponent {
   @Input() activeClass: boolean;
 
   @Output() hotelSelected: EventEmitter<any> = new EventEmitter;
+  @Output() favoriteSelected: EventEmitter<any> = new EventEmitter;
 
   public selectHotel() {
     this.hotelSelected.emit();
+  }
+
+  public addToFavorites() {
+    this.favoriteSelected.emit();
   }
 }

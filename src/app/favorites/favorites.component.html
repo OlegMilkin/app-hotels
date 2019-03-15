@@ -1,0 +1,11 @@
+<div class="temperatur favorite" *ngIf="favoriteHotelsList.length > 0">
+  <h5>Favorites</h5>
+  <span _ngcontent-c3="" class="w-line"></span>
+  <ul>
+    <li class="favorite-list-item" *ngFor="let favorite of favoriteHotelsList; let i = index">
+      {{ favorite.title }}
+      <span class="removeFavorite" (click)="removeFavorite(i)">&times;</span>
+    </li>
+  </ul>
+</div>
+

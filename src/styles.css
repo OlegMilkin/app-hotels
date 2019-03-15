@@ -67,6 +67,28 @@ h1 {
   border-radius: 5px;
   margin-bottom: 2.5em;
 }
+.temperatur.favorite {
+  background: #fff;
+  margin-top: 1.5em;
+}
+.temperatur.favorite h5 {
+  color: #000;
+}
+.temperatur.favorite .w-line {
+  background: #000;
+}
+.favorite-list-item {
+  text-align: left;
+  padding: 5px 20px 5px 0;
+  position: relative;
+}
+.removeFavorite {
+  font-size: 30px;
+  position: absolute;
+  right: 0;
+  top: -2px;
+  cursor: pointer;
+}
 .ele-strip ul{
   text-align: center;
 }
@@ -200,6 +222,10 @@ ul li.anc-bor {
 .grid-1, .grid-3{
 	margin-right:10%;
 	width: 27%;
+}
+.activity-row {
+  padding: 15px 5px;
+  cursor: pointer;
 }
 .activity-row, .activity-row1{
   text-align: left;
@@ -485,4 +511,8 @@ h1 {
 }
 .scrollbar {
   height: 300px;
+}
+.add-btn {
+  margin: 15px 5px 5px 0;
+  cursor: pointer;
 }

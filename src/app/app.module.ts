@@ -7,6 +7,7 @@ import { ListComponent } from './list/list.component';
 import { ProfileComponent } from './profile/profile.component';
 import { WeatherComponent } from './weather/weather.component';
 import { FilterHotelPipe } from './filter-hotel.pipe';
+import { FavoritesComponent } from './favorites/favorites.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { FilterHotelPipe } from './filter-hotel.pipe';
     ListComponent,
     ProfileComponent,
     WeatherComponent,
-    FilterHotelPipe
+    FilterHotelPipe,
+    FavoritesComponent
   ],
   imports: [
     BrowserModule,

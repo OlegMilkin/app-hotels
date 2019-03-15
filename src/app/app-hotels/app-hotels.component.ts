@@ -36,7 +36,7 @@ export class AppHotelsComponent {
       id: 1,
       title: 'Kharkov plaza',
       address: 'Kharkov',
-      description: 'Five Stars',
+      description: 'sdfsdf sdfsdfsdf sdfsdfsdf',
       phone: '+2222222',
       picture: 'assets/images/2.jpg',
       photos: [
@@ -59,7 +59,7 @@ export class AppHotelsComponent {
       id: 2,
       title: 'Hotel name',
       address: 'Orlando',
-      description: 'Lorem ipson0',
+      description: 'Free WiFi is available. This apartment comes with 1 bedroom, a living room and a fully equipped kitchen.',
       phone: '+33333333',
       picture: 'assets/images/3.jpg',
       photos: [
@@ -77,14 +77,70 @@ export class AppHotelsComponent {
         photo: 'assets/images/b3.jpg'
       },
       stars: 5
+    },
+    {
+      id: 3,
+      title: 'Viva Castillo',
+      address: 'Adress new',
+      description: 'Viva Castillo is situated in Caleta De Fuste. The accommodation is 47 km from Corralejo.',
+      phone: '+334234234',
+      picture: 'assets/images/185979885.jpg',
+      photos: [
+        'assets/images/res.jpg',
+        'assets/images/r1.jpg'
+      ],
+      weather:  {
+        temperature: 20,
+        wind: 3,
+        icon: 'sun'
+      },
+      profile: {
+        followers: 450,
+        following: 786,
+        photo: 'assets/images/b3.jpg'
+      },
+      stars: 4
+    },
+    {
+      id: 4,
+      title: 'Caleta Paraiso Opens in new window',
+      address: 'Adress Paraiso',
+      description: 'Caleta Paraiso is located in Caleta De Fuste and offers an outdoor swimming pool and a terrace.',
+      phone: '+334234234',
+      picture: 'assets/images/184604628.jpg',
+      photos: [
+        'assets/images/res.jpg',
+        'assets/images/r1.jpg'
+      ],
+      weather:  {
+        temperature: 18,
+        wind: 3,
+        icon: 'sun'
+      },
+      profile: {
+        followers: 40,
+        following: 76,
+        photo: 'assets/images/b3.jpg'
+      },
+      stars: 3
     }
   ];
 
   public selectedHotel: IHotel = this.hotels[0];
+  public favoriteHotelsList = [];
 
   public selectHotel(hotel) {
     this.selectedHotel = hotel;
   }
 
-  public hotelStar: number = 3;
+  public addToFavorite(hotel) {
+    this.favoriteHotelsList.push(hotel);
+  }
+
+  public hotelStar: string = '';
+
+  starsFilter(event: Event) {
+    event.preventDefault();
+    this.hotelStar = (<HTMLInputElement> event.target).dataset.stars;
+  }
 }
