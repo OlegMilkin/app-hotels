@@ -133,11 +133,13 @@ export class AppHotelsComponent {
     this.selectedHotel = hotel;
   }
 
+  public hotelStar: string = '';
+
+  public searchInputText: string = '';
+
   public addToFavorite(hotel) {
     this.favoriteHotelsList.push(hotel);
   }
-
-  public hotelStar: string = '';
 
   starsFilter(event: Event) {
     event.preventDefault();
