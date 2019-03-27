@@ -126,6 +126,25 @@ export class AppHotelsComponent {
     }
   ];
 
+  public stars: IStars[] = [
+    {
+      value: 0,
+      title: 'Reset'
+    },
+    {
+      value: 3,
+      title: 'Three'
+    },
+    {
+      value: 4,
+      title: 'Four'
+    },
+    {
+      value: 5,
+      title: 'Five'
+    }
+  ];
+
   public selectedHotel: IHotel = this.hotels[0];
   public favoriteHotelsList = [];
 
@@ -141,8 +160,7 @@ export class AppHotelsComponent {
     this.favoriteHotelsList.push(hotel);
   }
 
-  starsFilter(event: Event) {
-    event.preventDefault();
-    this.hotelStar = (<HTMLInputElement> event.target).dataset.stars;
+  starsFilter(star) {
+    this.hotelStar = star;
   }
 }

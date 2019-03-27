@@ -22,3 +22,8 @@ interface IProfile {
   following: number;
   photo: string;
 }
+
+interface IStars {
+  value: number;
+  title: string;
+}

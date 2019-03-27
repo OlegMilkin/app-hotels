@@ -7,12 +7,7 @@ export class FilterHotelPipe implements PipeTransform {
   transform(hotelsList, hotelStar, searchInputText): any {
 
       if(!searchInputText) {
-        console.log(this.sortStars(hotelsList, hotelStar));
           return this.sortStars(hotelsList, hotelStar);
-      }
-
-      if(hotelStar == 0) {
-          return console.log('ff');
       }
 
       const filteredHotels = hotelsList.filter(hotel => {
@@ -24,6 +19,9 @@ export class FilterHotelPipe implements PipeTransform {
   }
 
   public sortStars(hotelsList, hotelStar){
+    if(hotelStar == 0) {
+      return hotelsList;
+    }
     return hotelsList.filter(hotel => hotel.stars == hotelStar);
   }
 

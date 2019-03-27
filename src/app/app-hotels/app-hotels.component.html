@@ -9,10 +9,7 @@
 			<div class="element-left-bottom">
 				<div class="ele-strip">
 					<ul>
-						<li><a href="#" [attr.data-stars]="reset" (click)="starsFilter($event)">Reset</a></li>
-						<li><a href="#"   [attr.data-stars]="3" (click)="starsFilter($event)">3 STARS</a></li>
-						<li><a href="#"  [attr.data-stars]="4" (click)="starsFilter($event)">4 STARS</a></li>
-						<li><a href="#" [attr.data-stars]="5" (click)="starsFilter($event)">5 STARS</a></li>
+						<li *ngFor="let star of stars" (click)='starsFilter(star.value)'>{{ star.title }}</li>
 					</ul>
 				</div>
 				<div class="village">
