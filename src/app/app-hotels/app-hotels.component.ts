@@ -157,7 +157,16 @@ export class AppHotelsComponent {
   public searchInputText: string = '';
 
   public addToFavorite(hotel) {
-    this.favoriteHotelsList.push(hotel);
+
+    let isHotelAdded = this.favoriteHotelsList.some(function(hotelItem) {
+      return hotelItem.id == hotel.id;
+    });
+
+    if (!isHotelAdded) {
+      this.favoriteHotelsList.push(hotel);
+    } else {
+      alert('Этот отель уже добавлен');
+    }
   }
 
   starsFilter(star) {

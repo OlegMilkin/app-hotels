@@ -10,6 +10,10 @@ export class FavoritesComponent {
   @Input('hotelItem') favoriteHotelsList;
 
   removeFavorite(index) {
-    this.favoriteHotelsList.splice(index, 1);
+    let confirmAnswer = confirm("Вы уверенны?");
+
+    if (confirmAnswer) {
+      this.favoriteHotelsList.splice(index, 1);
+    }
   }
 }
