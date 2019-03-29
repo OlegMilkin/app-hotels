@@ -9,7 +9,7 @@ import {HotelsService} from '../hotels.service';
 
 export class AppHotelsComponent implements OnInit {
 
-  public hotels;
+  public hotels = [];
 
   ngOnInit() {
     this.hotels = this._hotelsService.getAllHotels();
@@ -36,9 +36,7 @@ export class AppHotelsComponent implements OnInit {
       title: 'Five'
     }
   ];
-  //public selectedHotel: IHotel = this.hotels[0];
-
-  public selectedHotel: IHotel = this._hotelsService.getAllHotels()[0];
+  public selectedHotel: IHotel = this.hotels[0];
   public favoriteHotelsList = [];
 
   public selectHotel(hotel) {
