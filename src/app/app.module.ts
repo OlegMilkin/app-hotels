@@ -8,6 +8,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { WeatherComponent } from './weather/weather.component';
 import { FilterHotelPipe } from '../pipes/filter-hotel.pipe';
 import { FavoritesComponent } from './favorites/favorites.component';
+import { HotelsService } from './hotels.service';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,7 @@ import { FavoritesComponent } from './favorites/favorites.component';
     BrowserModule,
     FormsModule
   ],
-  providers: [],
+  providers: [HotelsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
