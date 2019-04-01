@@ -9,10 +9,10 @@ import {HotelsService} from '../hotels.service';
 
 export class AppHotelsComponent implements OnInit {
 
-  public hotels = [];
+  public hotels: IHotel = [];
 
   ngOnInit() {
-    this.hotels = this._hotelsService.getAllHotels();
+    this._hotelsService.getAllHotels().subscribe(hotels => this.hotels = hotels);
   }
 
   constructor(private _hotelsService: HotelsService) {
