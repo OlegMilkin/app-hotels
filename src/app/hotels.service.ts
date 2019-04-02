@@ -9,4 +9,8 @@ export class HotelsService {
   public getAllHotels() {
     return this._http.get('http://localhost:3000/hotels');
   }
+
+  public getSelectedHotel(id = 0) {
+    return this._http.get('http://localhost:3000/hotels/${id}');
+  }
 }
