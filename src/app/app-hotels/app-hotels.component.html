@@ -4,29 +4,30 @@
 			<input type="text" class="hotel-search" placeholder="Find hotel" [(ngModel)]="searchInputText">
 
 			<div class="element-bg-img">
-				<img src="{{ selectedHotel.picture }}" alt="" class="img-responsive">
+				<img src="{{ selectedHotel?.picture }}" alt="" class="img-responsive">
 			</div>
 			<div class="element-left-bottom">
 				<div class="ele-strip">
 					<ul>
-						<li *ngFor="let star of stars" (click)='starsFilter(star.value)'>{{ star.title }}</li>
+						<li *ngFor="let star of stars" (click)='starsFilter(star.value)'>{{ star?.title }}</li>
 					</ul>
 				</div>
 				<div class="village">
 				  <h3>Righteous indignation & like</h3>
 				  <span class="line"></span>
 				  <div class="activity_box">
-					<div class="scrollbar" id="style-2">
-						<app-list *ngFor="let hotel of hotels |
-						 filterHotel:hotelStar : searchInputText; let i = index" [hotelItem]="hotel" (hotelSelected)="selectHotel(hotel)" (favoriteSelected)="addToFavorite(hotel)" [activeClass]="selectedHotel.id === i"></app-list>
-					</div>
+					<app-list *ngFor="let hotel of hotels | filterHotel:hotelStar : searchInputText; let i = index" [hotelItem]="hotel" (hotelSelected)="selectHotel(hotel)" (favoriteSelected)="addToFavorite(hotel)" [activeClass]="selectedHotel.id === i" [ngStyle]="{'width' : '25%'}"></app-list>
 				  </div>
-			   </div>
-		</div>
+			    </div>
+				<mat-paginator [length]="hotels.length"
+							   [pageSize]="2"
+							   (page)="changePage($event)">
+				</mat-paginator>
+			</div>
 	   </div>
 		<div class="element-right">
-			<app-weather [hotelItem]="selectedHotel.weather"></app-weather>
-			<app-profile [hotelItem]="selectedHotel.profile"></app-profile>
+			<app-weather [hotelItem]="selectedHotel"></app-weather>
+			<app-profile [hotelItem]="selectedHotel"></app-profile>
 			<app-favorites [hotelItem]="favoriteHotelsList"></app-favorites>
 		</div>
 	  <div class="clear"> </div>

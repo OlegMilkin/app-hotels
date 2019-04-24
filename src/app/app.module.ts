@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -10,6 +11,7 @@ import { WeatherComponent } from './weather/weather.component';
 import { FilterHotelPipe } from '../pipes/filter-hotel.pipe';
 import { FavoritesComponent } from './favorites/favorites.component';
 import { HotelsService } from './hotels.service';
+import { MatPaginatorModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,12 @@ import { HotelsService } from './hotels.service';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatPaginatorModule,
+    BrowserAnimationsModule
+  ],
+  exports: [
+    MatPaginatorModule
   ],
   providers: [HotelsService],
   bootstrap: [AppComponent]
